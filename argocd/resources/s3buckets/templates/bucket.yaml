@@ -1,0 +1,17 @@
+apiVersion: s3.aws.m.upbound.io/v1beta1
+kind: Bucket
+metadata:
+  name: {{ .Values.bucketName }}
+  namespace: default
+  labels:
+    backstage.io/kubernetes-id: {{ .Values.bucketName }}    
+spec:
+  forProvider:
+    region: {{ .Values.region }}
+    forceDestroy: {{ .Values.forceDestroy }}
+    tags:
+      Environment: {{ .Values.environment }}
+      ManagedBy: Crossplane    
+  providerConfigRef:
+    name: {{ .Values.providerConfigName }}
+    kind: ClusterProviderConfig
