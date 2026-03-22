@@ -1,0 +1,46 @@
+apiVersion: lambda.aws.m.upbound.io/v1beta1
+kind: Function
+metadata:
+  name: {{ .Values.lambda.name }}-{{ .Values.environment }}
+  namespace: {{ .Values.namespace }}  
+spec:
+  forProvider:
+    region: {{ .Values.region }}
+    role: {{ .Values.lambda.iamExecRole }}
+    handler: {{ .Values.lambda.handler }}
+    runtime: {{ .Values.lambda.runtime }}
+    s3Bucket: {{ .Values.lambda.s3Bucket }}
+    s3Key: {{ .Values.lambda.s3Key }}
+# --- 
+# # unable to get iam to work, permissions issues, see iam pod logs for evidence of errors.
+# apiVersion: iam.aws.m.upbound.io/v1beta1
+# kind: Role
+# metadata:
+#   name: {{ .Values.lambda.iamExecRole }}-{{ .Values.environment }}
+#   namespace: {{ .Values.namespace }}    
+# spec:
+#   forProvider: 
+#     assumeRolePolicy: |
+#       {
+#         "Version": "2012-10-17",
+#         "Statement": [
+#           {
+#             "Action": "sts:AssumeRole",
+#             "Principal": {
+#               "Service": "lambda.amazonaws.com"
+#             },
+#             "Effect": "Allow",
+#             "Sid": ""
+#           }
+#         ]
+#       }
+# ---
+# apiVersion: iam.aws.m.upbound.io/v1beta1
+# kind: RolePolicyAttachment
+# metadata:
+#   name: {{ .Values.lambda.iamExecRole }}-{{ .Values.environment }}-iam-role-attachment
+#   namespace: {{ .Values.namespace }}    
+# spec:
+#   forProvider: 
+#     policyArn: arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+#     role: {{ .Values.lambda.iamExecRole }}-{{ .Values.environment }}
