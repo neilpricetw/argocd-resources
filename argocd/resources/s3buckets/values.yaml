@@ -1,5 +1,0 @@
-bucketName: "neil-s3bkt-argocdabc"
-region: "ap-southeast-2"
-environment: "dev"
-forceDestroy: true
-providerConfigName: "default"
