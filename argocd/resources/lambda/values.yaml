@@ -3,7 +3,7 @@ environment: "dev"
 namespace: "default"
 
 lambda:
-  name: "newlambda"
+  name: "neil-lambda"
   iamExecRole: "arn:aws:iam::160071257600:role/newlambda-role"
   handler: "index.handler"
   runtime: "nodejs18.x"
