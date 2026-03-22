@@ -6,6 +6,7 @@ metadata:
   labels:
     backstage.io/kubernetes-namespace: {{ .Values.namespace }}      
     backstage.io/kubernetes-id: {{ .Values.bucketName }}    
+    terasky.backstage.io/add-to-catalog: "true"    
 spec:
   forProvider:
     region: {{ .Values.region }}
