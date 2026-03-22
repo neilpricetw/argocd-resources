@@ -3,6 +3,7 @@ kind: Resource
 metadata:
   name: neil-vpc
   annotations:
+    backstage.io/kubernetes-namespace: default
     backstage.io/kubernetes-id: neil-vpc
     backstage.io/techdocs-ref: dir:.
 spec:

@@ -3,6 +3,7 @@ kind: Resource
 metadata:
   name: neil-s3bkt-argocd-sync1
   annotations:
+    backstage.io/kubernetes-namespace: default  
     backstage.io/kubernetes-id: neil-s3bkt-argocd-sync1
     backstage.io/techdocs-ref: dir:.
 spec:
