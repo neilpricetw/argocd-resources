@@ -6,6 +6,7 @@ metadata:
     backstage.io/kubernetes-namespace: default  
     backstage.io/kubernetes-id: neil-s3bkt-argocd-sync1
     backstage.io/techdocs-ref: dir:.
+    terasky.backstage.io/add-to-catalog: "true"    
 spec:
   type: s3-storage
   owner: guests
