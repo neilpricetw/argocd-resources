@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: neil-lambda
+  annotations:
+    backstage.io/kubernetes-id: neil-lambda
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: lambda
+  owner: guests
+  lifecycle: experimental
+  system: demos  
