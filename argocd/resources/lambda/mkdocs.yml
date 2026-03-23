@@ -1,9 +1,0 @@
-site_name: Lambda Documentation
-
-nav:
-  - Home: index.md
-
-docs_dir: docs
-
-plugins:
-  - techdocs-core

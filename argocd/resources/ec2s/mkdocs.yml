@@ -1,9 +1,0 @@
-site_name: EC2 Documentation
-
-nav:
-  - Home: index.md
-
-docs_dir: docs
-
-plugins:
-  - techdocs-core
