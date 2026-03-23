@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: neil-s3kt-backstage-123
+  description: "S3 Bucket provisioned via Backstage for group:default/guests"
+  links:
+    - title: AWS Console
+      url: https://s3.console.aws.amazon.com/s3/buckets/neil-s3kt-backstage-123
+spec:
+  type: s3-storage
+  owner: group:default/guests
+  lifecycle: production
+  system: system:default/demos
